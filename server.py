@@ -6,10 +6,10 @@ from typing import Optional
 
 # 依赖: 官方 MCP Python SDK 的快速服务端
 try:
-    from mcp.server.fastmcp import FastMCP
+    from fastmcp import FastMCP
 except Exception as import_error:  # 兜底提示，便于在未安装依赖时给出清晰错误
     raise RuntimeError(
-        "未找到 mcp 包，请先安装依赖：pip install mcp"
+        "未找到 fastmcp 包，请先安装依赖：pip install fastmcp"
     ) from import_error
 
 import requests
@@ -83,13 +83,12 @@ if __name__ == "__main__":
     import sys
     
     # 检查命令行参数决定运行模式
-    if len(sys.argv) > 1 and sys.argv[1] == "--http":
-        # HTTP 模式，适用于 Dify 等通过 HTTP 调用的平台
-        port = int(sys.argv[2]) if len(sys.argv) > 2 else 8000
-        print(f"Starting MCP server in HTTP mode on port {port}")
-        mcp.run_server("localhost", port)
+    if len(sys.argv) > 1 and sys.argv[1] == "--sse":
+        # SSE 模式，适用于 Web 应用
+        print("Starting MCP server in SSE mode")
+        mcp.run("sse")
     else:
         # 默认 stdio 模式，适配通用 MCP Host（如 IDE/代理）
-        mcp.run()
+        mcp.run("stdio")
 
 

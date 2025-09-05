@@ -25,8 +25,8 @@ pip install uv
 # 启动服务
 uvx wechat-send
 
-# HTTP 模式启动
-uvx wechat-send --http 8000
+# SSE 模式启动
+uvx wechat-send --sse
 ```
 
 ### 2. 使用 npx 启动
@@ -37,8 +37,8 @@ npm install
 # 启动服务
 npx wechat-send
 
-# HTTP 模式启动
-npx wechat-send --http 8000
+# SSE 模式启动
+npx wechat-send --sse
 ```
 
 ### 3. 使用 python -m 启动
@@ -46,8 +46,8 @@ npx wechat-send --http 8000
 # 标准模式启动
 python -m wechat_send
 
-# HTTP 模式启动
-python -m wechat_send --http 8000
+# SSE 模式启动
+python -m wechat_send --sse
 ```
 
 ### 4. 传统方式启动
@@ -55,8 +55,8 @@ python -m wechat_send --http 8000
 # 直接运行 server.py
 python server.py
 
-# HTTP 模式
-python server.py --http 8000
+# SSE 模式
+python server.py --sse
 ```
 
 ## 工具说明
@@ -177,6 +177,7 @@ python server.py
 ### 云平台部署
 - 支持 Railway、Heroku、Docker 等平台
 - 支持魔塔社区部署（使用 `python -m wechat_send` 或 `uvx wechat-send`）
+- 支持 stdio 和 SSE 两种运行模式
 - 确保安装 Python 3.8+ 和所需依赖
 - 设置必要的环境变量
 
