@@ -1,0 +1,24 @@
+{
+  "name": "wechat-send-mcp",
+  "version": "1.0.0",
+  "description": "通过企业微信机器人 Webhook 接口发送文件到微信群的 MCP 服务",
+  "main": "index.js",
+  "bin": {
+    "wechat-send": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "wechat",
+    "file-send",
+    "webhook"
+  ],
+  "author": "wechat_send",
+  "license": "MIT",
+  "dependencies": {
+    "child_process": "^1.0.2"
+  }
+}
