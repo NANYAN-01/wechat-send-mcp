@@ -37,6 +37,7 @@ def send_file_to_wechat_group(file_path, webhook_url):
 
 
 if __name__ == '__main__':
-    file_path = "E:/EEC共享/工作冗杂文件/10-1 供货设备耗电量清单.xlsx" # 替换为实际文件路径
-    webhook_url = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=8064e569-637a-4da7-b7af-17a75254f5b2'  # 替换为实际Webhook地址
+    file_path = "" # 替换为实际文件路径
+    webhook_url = ''  # 替换为实际Webhook地址
+
     send_file_to_wechat_group(file_path, webhook_url)
