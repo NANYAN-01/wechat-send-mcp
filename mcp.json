@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "wechat_send",
   "license": "MIT",
-  "entry": "server.py",
+  "entry": "__main__.py",
   "dependencies": {
     "mcp": ">=1.0.0",
     "requests": ">=2.25.1"
