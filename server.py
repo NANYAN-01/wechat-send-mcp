@@ -87,7 +87,8 @@ if __name__ == "__main__":
         # HTTP 模式，适用于 Dify 等通过 HTTP 调用的平台
         port = int(sys.argv[2]) if len(sys.argv) > 2 else 8000
         print(f"Starting MCP server in HTTP mode on port {port}")
-        mcp.run_server("localhost", port)
+        # 使用正确的 FastMCP API
+        mcp.run("sse")  # 或者使用 "streamable-http"
     else:
         # 默认 stdio 模式，适配通用 MCP Host（如 IDE/代理）
         mcp.run()
